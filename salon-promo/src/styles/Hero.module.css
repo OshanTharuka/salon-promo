@@ -1,0 +1,190 @@
+/* src/styles/Hero.module.css */
+
+/* 1. The overall hero section with a diagonal gradient */
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  /* Or choose your brand colors: 
+     background: linear-gradient(135deg, #0073e6 0%, #00c6ff 100%); 
+  */
+}
+
+/* 2. Large “blob” shapes behind content */
+.blobOne,
+.blobTwo {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  z-index: 0;
+  animation: floatBlob 8s infinite ease-in-out;
+}
+
+.blobOne {
+  width: 450px;
+  height: 450px;
+  background: #ffffff;
+  top: -100px;
+  left: -150px;
+}
+
+.blobTwo {
+  width: 600px;
+  height: 600px;
+  background: #ffffff;
+  bottom: -200px;
+  right: -200px;
+  opacity: 0.25;
+  animation-duration: 10s;
+}
+
+/* Simple float animation for blobs */
+@keyframes floatBlob {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(20px) scale(1.05);
+  }
+}
+
+/* 3. Inner container: uses flex to position text + image */
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative; /* to keep content above blobs */
+  z-index: 1;
+}
+
+/* 4. Text Column */
+.content {
+  flex: 1 1 400px;
+  max-width: 550px;
+  animation: fadeInText 1.2s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInText {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 4a. Heading style */
+.title {
+  font-size: 2.75rem;
+  line-height: 1.2;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+/* Make sure the break appears only on medium+ screens */
+.break {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .title {
+    font-size: 3.5rem;
+  }
+  .break {
+    display: inline;
+  }
+}
+
+/* 4b. Subtitle / paragraph */
+.subtitle {
+  font-size: 1.25rem;
+  color: #f2f2f2;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+/* 4c. Button styling */
+.button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: #ff6b6b; /* or choose a contrasting accent color */
+  padding: 0.85rem 2.25rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 5. Image Column */
+.imageWrapper {
+  flex: 1 1 400px;
+  max-width: 550px;
+  text-align: center;
+  animation: fadeInImage 1.4s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes fadeInImage {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroImage {
+  width: 100%;
+  max-width: 550px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 6. Responsive adjustments */
+@media (max-width: 992px) {
+  /* Stack columns on narrower screens */
+  .inner {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .content {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+  .button {
+    padding: 0.75rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  /* Shrink or hide blobs on very small screens */
+  .blobOne {
+    width: 300px;
+    height: 300px;
+    top: -80px;
+    left: -100px;
+  }
+  .blobTwo {
+    width: 400px;
+    height: 400px;
+    bottom: -150px;
+    right: -150px;
+  }
+}

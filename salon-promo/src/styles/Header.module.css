@@ -1,0 +1,86 @@
+/* src/styles/Header.module.css */
+
+/* 1. Make header sit on top of the Hero gradient */
+.header {
+  position: absolute;     /* float over the Hero */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;           /* above blobs/text in Hero */
+  background: rgba(255, 255, 255, 0); /* fully transparent by default */
+  transition: background 0.3s ease;
+  padding: 1rem 0;
+}
+
+/* 2. Once the user scrolls past Hero, we can add a background 
+      change via a “scrolled” class (optional enhancement) */
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.9); 
+  /* You can also choose a solid color, e.g. 
+     background: #ffffff; 
+  */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. Inner container (logo + nav) */
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 4. Logo styling */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff; /* white, so it pops over the gradient */
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* 5. Nav items */
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.navList a {
+  text-decoration: none;
+  color: #ffffff; /* white text */
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* underline on hover (white-to-light-pink transition) */
+.navList a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  background: #ffffff;
+  opacity: 0;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.navList a:hover,
+.navList a:focus {
+  color: #ff6b6b; /* pink accent on hover */
+}
+
+.navList a:hover::after,
+.navList a:focus::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* 6. Responsive: collapse nav into a “hamburger” at < 768px (optional) */
+@media (max-width: 768px) {
+  .navList {
+    display: none;
+  }
+}

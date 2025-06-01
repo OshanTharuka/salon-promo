@@ -1,0 +1,129 @@
+/* CTA.module.css */
+
+/* 1. Use a reversed gradient (or same gradient) but darker so the CTA “pops” */
+.cta {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 0;
+  background: linear-gradient(135deg, #fad0c4 0%, #ff9a9e 100%);
+  /* You can tweak this to be a slightly darker version of Hero’s gradient */
+}
+
+/* 2. One big, blurred “blob” behind the box for decoration */
+.blob {
+  position: absolute;
+  width: 700px;
+  height: 700px;
+  background: #ffffff;
+  border-radius: 50%;
+  top: -300px;
+  right: -250px;
+  opacity: 0.15;
+  z-index: 0;
+  filter: blur(80px);
+  animation: floatBlobCTA 10s ease-in-out infinite;
+}
+
+/* Float animation for the blob */
+@keyframes floatBlobCTA {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(20px) scale(1.05);
+  }
+}
+
+/* 3. Center the content box */
+.box {
+  position: relative; /* bring box above the blob */
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  color: #ffffff;
+}
+
+.title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  animation: fadeInTextCTA 1s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.subtitle {
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.5;
+  opacity: 0;
+  animation: fadeInTextCTA 1.3s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* 4. Buttons container */
+.buttons {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeInTextCTA 1.6s ease forwards;
+  animation-delay: 0.6s;
+}
+
+/* 5. Individual button style */
+.button {
+  background-color: #ffffff;
+  color: #ff6b6b;
+  padding: 0.85rem 2.25rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Fade-in keyframes */
+@keyframes fadeInTextCTA {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 6. Responsive tweaks */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.25rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .button {
+    width: 100%;
+    max-width: 300px;
+  }
+  .blob {
+    width: 500px;
+    height: 500px;
+    top: -250px;
+    right: -200px;
+    filter: blur(60px);
+  }
+}

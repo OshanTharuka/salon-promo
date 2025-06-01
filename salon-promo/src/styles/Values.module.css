@@ -1,0 +1,59 @@
+/* src/styles/Values.module.css */
+.values {
+  /* Use a gentle off-white with a slight blush tone */
+  background-color: #fffcfa;
+  padding: 6rem 0;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #333;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.item {
+  flex: 1 1 300px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.item h3 {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+  color: #ff7e5f;
+}
+
+.item p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .values {
+    padding: 4rem 0;
+  }
+  .heading {
+    font-size: 2rem;
+  }
+  .item {
+    padding: 1.5rem;
+  }
+}

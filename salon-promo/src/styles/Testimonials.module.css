@@ -1,0 +1,43 @@
+.testimonials {
+  background-color: #fff;
+}
+
+.heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 2rem;
+  border: 1px solid #eee;
+}
+
+.text {
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.author {
+  text-align: right;
+  font-weight: 500;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .heading {
+    font-size: 1.75rem;
+  }
+  .card {
+    padding: 1.5rem;
+  }
+}

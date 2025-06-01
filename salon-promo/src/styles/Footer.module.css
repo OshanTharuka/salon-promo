@@ -1,0 +1,35 @@
+.footer {
+  background-color: #333;
+  color: #ccc;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.social a {
+  margin-left: 1rem;
+  color: #ccc;
+  text-decoration: none;
+}
+
+.social a:hover {
+  color: #fff;
+}
+
+/* On small screens, stack them */
+@media (max-width: 600px) {
+  .flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+  .social a {
+    margin-left: 0.5rem;
+  }
+}
