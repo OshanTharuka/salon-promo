@@ -28,7 +28,7 @@ export default function Hero() {
         {/* Image Column */}
         <div className={styles.imageWrapper}>
           <img
-            src="/hero-image.jpg"
+            src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80"
             alt="Hair stylist at work"
             className={styles.heroImage}
           />
