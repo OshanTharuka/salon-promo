@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/salon-promo/static/css/main.8176446c.css",
-    "main.js": "/salon-promo/static/js/main.5a889792.js",
+    "main.js": "/salon-promo/static/js/main.a4a9e773.js",
     "index.html": "/salon-promo/index.html",
     "main.8176446c.css.map": "/salon-promo/static/css/main.8176446c.css.map",
-    "main.5a889792.js.map": "/salon-promo/static/js/main.5a889792.js.map"
+    "main.a4a9e773.js.map": "/salon-promo/static/js/main.a4a9e773.js.map"
   },
   "entrypoints": [
     "static/css/main.8176446c.css",
-    "static/js/main.5a889792.js"
+    "static/js/main.a4a9e773.js"
   ]
 }
